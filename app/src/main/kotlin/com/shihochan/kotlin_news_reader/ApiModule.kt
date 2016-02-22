@@ -2,7 +2,7 @@ package com.shihochan.kotlin_news_reader
 
 import com.google.gson.Gson
 import com.shihochan.kotlin_news_reader.model.ApiConverter
-import com.shihochan.kotlin_news_reader.model.HatenaRestAdapter
+import com.shihochan.kotlin_news_reader.model.QiitaRestAdapter
 import com.shihochan.kotlin_news_reader.model.Endpoint
 import com.squareup.okhttp.OkHttpClient
 import dagger.Module
@@ -20,8 +20,8 @@ import javax.inject.Singleton
  */
 @Module class ApiModule {
 
-    @Provides @Singleton @HatenaRestAdapter
-    fun provideHatenaRestAdapter(client: Client): RestAdapter {
+    @Provides @Singleton @QiitaRestAdapter
+    fun provideQiitaRestAdapter(client: Client): RestAdapter {
         return RestAdapter.Builder()
                 .setEndpoint(Endpoint.qiita)
                 .setClient(client)

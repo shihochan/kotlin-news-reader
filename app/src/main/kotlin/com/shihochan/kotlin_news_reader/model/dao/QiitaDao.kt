@@ -1,6 +1,6 @@
 package com.shihochan.kotlin_news_reader.model.dao
 
-import com.shihochan.kotlin_news_reader.model.HatenaRestAdapter
+import com.shihochan.kotlin_news_reader.model.QiitaRestAdapter
 import com.shihochan.kotlin_news_reader.model.api.Qiita
 import com.shihochan.kotlin_news_reader.model.dto.QiitaDto
 import retrofit.RestAdapter
@@ -16,12 +16,12 @@ import javax.inject.Singleton
 @Singleton
 class QiitaDao
 @Inject
-constructor(@HatenaRestAdapter private var hatenaRestAdapter: RestAdapter) {
+constructor(@QiitaRestAdapter private var qiitaRestAdapter: RestAdapter) {
 
     fun getHotEntry(
             onNext: Action1<List<QiitaDto>>,
             onError: Action1<Throwable>): Subscription {
-        return hatenaRestAdapter
+        return qiitaRestAdapter
                 .create(Qiita::class.java)
                 .getItems(100)
                 .observeOn(AndroidSchedulers.mainThread())
