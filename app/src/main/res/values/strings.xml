@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">kotlin-news-reader</string>
+
+    <string name="drawer_home">ホーム</string>
+    <string name="drawer_preferences">設定</string>
+
+    <string name="drawer_open">開く</string>
+    <string name="drawer_close">閉じる</string>
+
+    <string name="nav_header_usr_name">Shiho Chan</string>
+    <string name="nav_header_usr_address">heyfromshihochan@gmail.com</string>
+
 </resources>

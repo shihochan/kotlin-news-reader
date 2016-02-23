@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Margin -->
+    <dimen name="margin_xs">4dp</dimen>
+    <dimen name="margin_s">8dp</dimen>
+    <dimen name="margin_m">16dp</dimen>
+    <dimen name="margin_l">24dp</dimen>
+
+    <!-- Text -->
+    <dimen name="txt_s">12sp</dimen>
+    <dimen name="txt_m">14sp</dimen>
+    <dimen name="txt_l">16sp</dimen>
+
+    <dimen name="drawer_header">172dp</dimen>
+    <dimen name="drawer_header_icon">64dp</dimen>
+
+</resources>
