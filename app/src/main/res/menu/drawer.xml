@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+
+        <item
+                android:id="@+id/home"
+                android:checked="true"
+                android:icon="@drawable/ic_home"
+                android:title="@string/drawer_home" />
+
+        <item
+                android:id="@+id/preferences"
+                android:icon="@drawable/ic_settings"
+                android:title="@string/drawer_preferences" />
+
+    </group>
+
+</menu>
