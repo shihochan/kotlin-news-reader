@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/drawer_header">
+
+    <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/pink500_alpha_54" />
+
+    <View
+            android:id="@+id/drawer_header_icon"
+            android:layout_width="@dimen/drawer_header_icon"
+            android:layout_height="@dimen/drawer_header_icon"
+            android:layout_marginLeft="@dimen/margin_m"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/circle_nav_header" />
+
+    <TextView
+            android:id="@+id/txt_nav_header_usr_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/drawer_header_icon"
+            android:layout_marginLeft="@dimen/margin_m"
+            android:layout_marginTop="@dimen/margin_s"
+            android:layout_marginRight="@dimen/margin_m"
+            android:ellipsize="end"
+            android:lines="1"
+            android:textColor="@color/white"
+            android:textSize="@dimen/txt_s"
+            android:textStyle="bold"
+            android:text="@string/nav_header_usr_name"/>
+
+    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txt_nav_header_usr_name"
+            android:layout_marginLeft="@dimen/margin_m"
+            android:layout_marginTop="@dimen/margin_xs"
+            android:layout_marginRight="@dimen/margin_m"
+            android:layout_marginBottom="@dimen/margin_xs"
+            android:textColor="@color/white"
+            android:textSize="@dimen/txt_s"
+            android:text="@string/nav_header_usr_address" />
+
+</RelativeLayout>
