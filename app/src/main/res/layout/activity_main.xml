@@ -14,12 +14,28 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content" >
 
-        <android.support.v7.widget.Toolbar
-                android:id="@+id/toolbar"
+        <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:minHeight="?attr/actionBarSize"
-                android:background="@color/theme500" />
+                android:layout_height="wrap_content">
+
+            <android.support.v7.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="?attr/actionBarSize"
+                    android:background="@color/theme500" />
+
+            <me.zhanghai.android.materialprogressbar.MaterialProgressBar
+                    android:id="@+id/progressbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/progress_bar_height"
+                    android:layout_below="@id/toolbar"
+                    android:indeterminate="true"
+                    app:mpb_progressStyle="horizontal"
+                    app:mpb_useIntrinsicPadding="false"
+                    style="@style/Widget.MaterialProgressBar.ProgressBar.Horizontal" />
+
+        </RelativeLayout>
 
     </android.support.design.widget.CoordinatorLayout>
 

@@ -57,6 +57,7 @@ dependencies {
 
     // UI
     compile 'com.yqritc:recyclerview-multiple-viewtypes-adapter:1.0.5'
+    compile 'me.zhanghai.android.materialprogressbar:library:1.1.4'
 
     testCompile 'junit:junit:4.12'
 }
