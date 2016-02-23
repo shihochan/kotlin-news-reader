@@ -24,7 +24,7 @@ android {
 }
 
 repositories {
-    mavenCentral()
+    maven { url 'https://oss.sonatype.org/content/repositories/snapshots/' }
 }
 
 dependencies {
@@ -36,6 +36,8 @@ dependencies {
     // Google
     compile "com.android.support:support-v4:${SUPPORT_PACKAGE_VERSION}"
     compile "com.android.support:appcompat-v7:$SUPPORT_PACKAGE_VERSION"
+    compile "com.android.support:recyclerview-v7:${SUPPORT_PACKAGE_VERSION}"
+    compile "com.android.support:design:${SUPPORT_PACKAGE_VERSION}"
 
     compile 'com.google.code.gson:gson:2.5'
     compile 'com.google.dagger:dagger:2.0.2'
@@ -43,6 +45,7 @@ dependencies {
     provided 'org.glassfish:javax.annotation:10.0-b28'
 
     // Square
+    compile 'com.jakewharton:kotterknife:0.1.0-SNAPSHOT'
     compile 'com.squareup.okhttp:okhttp:2.7.1'
     compile 'com.squareup.retrofit:retrofit:1.9.0'
     compile 'com.jakewharton.timber:timber:3.1.0'
@@ -51,6 +54,9 @@ dependencies {
     // FRP
     compile 'io.reactivex:rxjava:1.1.0'
     compile 'io.reactivex:rxandroid:1.1.0'
+
+    // UI
+    compile 'com.yqritc:recyclerview-multiple-viewtypes-adapter:1.0.5'
 
     testCompile 'junit:junit:4.12'
 }
