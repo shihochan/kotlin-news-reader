@@ -36,8 +36,10 @@ dependencies {
     // Google
     compile "com.android.support:support-v4:${SUPPORT_PACKAGE_VERSION}"
     compile "com.android.support:appcompat-v7:$SUPPORT_PACKAGE_VERSION"
-    compile "com.android.support:recyclerview-v7:${SUPPORT_PACKAGE_VERSION}"
     compile "com.android.support:design:${SUPPORT_PACKAGE_VERSION}"
+    compile "com.android.support:recyclerview-v7:${SUPPORT_PACKAGE_VERSION}"
+    compile "com.android.support:cardview-v7:${SUPPORT_PACKAGE_VERSION}"
+    compile "com.android.support:customtabs:${SUPPORT_PACKAGE_VERSION}"
 
     compile 'com.google.code.gson:gson:2.5'
     compile 'com.google.dagger:dagger:2.0.2'
@@ -54,10 +56,17 @@ dependencies {
     // FRP
     compile 'io.reactivex:rxjava:1.1.0'
     compile 'io.reactivex:rxandroid:1.1.0'
+    compile 'com.trello:rxlifecycle:0.3.0'
+    compile 'com.trello:rxlifecycle-components:0.3.0'
 
     // UI
     compile 'com.yqritc:recyclerview-multiple-viewtypes-adapter:1.0.5'
     compile 'me.zhanghai.android.materialprogressbar:library:1.1.4'
+
+    // Image Loader
+    compile 'com.github.bumptech.glide:glide:3.6.1'
+    compile 'com.github.bumptech.glide:okhttp-integration:1.3.1'
+    compile 'jp.wasabeef:glide-transformations:1.3.1'
 
     testCompile 'junit:junit:4.12'
 }
