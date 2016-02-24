@@ -8,7 +8,7 @@
         android:layout_height="match_parent"
         android:fitsSystemWindows="true"
         tools:openDrawer="start"
-        tools:context=".ui.activity.MainActivity" >
+        tools:context=".ui.activity.MainActivity">
 
     <android.support.design.widget.CoordinatorLayout
             android:layout_width="match_parent"
@@ -24,6 +24,12 @@
                     android:layout_height="wrap_content"
                     android:minHeight="?attr/actionBarSize"
                     android:background="@color/theme500" />
+
+            <FrameLayout
+                    android:id="@+id/container"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@id/toolbar" />
 
             <me.zhanghai.android.materialprogressbar.MaterialProgressBar
                     android:id="@+id/progressbar"

@@ -10,23 +10,15 @@ import android.support.v7.widget.Toolbar
 import android.view.MenuItem
 import android.view.View
 import butterknife.bindView
-import com.shihochan.kotlin_news_reader.AppComponent
-import com.shihochan.kotlin_news_reader.MainApp
 import com.shihochan.kotlin_news_reader.R
-import com.shihochan.kotlin_news_reader.model.dao.QiitaDao
+import com.shihochan.kotlin_news_reader.ui.fragment.MainFragment
+import com.shihochan.kotlin_news_reader.util.ext.setContentFragment
 import me.zhanghai.android.materialprogressbar.MaterialProgressBar
-import javax.inject.Inject
 
 /**
  * Created by Yuki Shiho on 2016/02/21.
  */
 class MainActivity : AppCompatActivity() {
-
-    val component: AppComponent by lazy {
-        MainApp.appComponent
-    }
-
-    @Inject lateinit var qiitaDao: QiitaDao
 
     private val toolBar: Toolbar by bindView(R.id.toolbar)
     private val progressBar: MaterialProgressBar by bindView(R.id.progressbar)
@@ -38,13 +30,14 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        component.inject(this)
         setContentView(R.layout.activity_main)
 
         setSupportActionBar(toolBar)
         supportActionBar?.title = getString(R.string.drawer_home)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         drawerToggle.isDrawerIndicatorEnabled = true
+
+        setContentFragment(R.id.container, MainFragment.newInstance())
 
         Handler().postDelayed({ progressBar.visibility = View.GONE }, 5000)
     }
