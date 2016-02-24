@@ -17,4 +17,6 @@
 
     <dimen name="progress_bar_height">4dp</dimen>
 
+    <dimen name="feed_one_column_icon">48dp</dimen>
+
 </resources>

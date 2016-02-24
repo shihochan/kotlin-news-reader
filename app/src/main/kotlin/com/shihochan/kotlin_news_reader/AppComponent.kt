@@ -1,6 +1,6 @@
 package com.shihochan.kotlin_news_reader
 
-import com.shihochan.kotlin_news_reader.ui.activity.MainActivity
+import com.shihochan.kotlin_news_reader.ui.fragment.MainFragment
 import dagger.Component
 import javax.inject.Singleton
 
@@ -13,5 +13,5 @@ interface AppComponent {
 
     fun inject(app: MainApp)
 
-    fun inject(mainActivity: MainActivity)
+    fun inject(mainFragment: MainFragment)
 }

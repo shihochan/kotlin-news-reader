@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.shihochan.kotlin_news_reader.ui.view.FeedOneColumnView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/view_feed_one_column"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:foreground="@drawable/ripple_btn_default"
+        app:cardCornerRadius="2dp"
+        app:cardPreventCornerOverlap="false">
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="112dp"
+            android:orientation="horizontal">
+
+        <LinearLayout
+                android:id="@+id/feed_one_column_img_block"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginLeft="@dimen/margin_m"
+                android:layout_marginTop="@dimen/margin_s">
+
+            <ImageView
+                    android:id="@+id/feed_one_column_usr_img"
+                    android:layout_width="@dimen/feed_one_column_icon"
+                    android:layout_height="@dimen/feed_one_column_icon"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop" />
+
+            <View
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/margin_m"
+                    android:background="@drawable/selector_btn_clipped" />
+
+        </LinearLayout>
+
+        <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="112dp"
+                android:layout_toRightOf="@id/feed_one_column_img_block"
+                android:paddingLeft="@dimen/margin_m"
+                android:paddingRight="@dimen/margin_m">
+
+            <TextView
+                    android:id="@+id/feed_one_column_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_s"
+                    android:textSize="@dimen/txt_m"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:lineSpacingExtra="1dp"
+                    android:maxLines="1"
+                    android:ellipsize="end" />
+
+            <TextView
+                    android:id="@+id/feed_one_column_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/feed_one_column_title"
+                    android:layout_marginTop="@dimen/margin_xs"
+                    android:textSize="@dimen/txt_s"
+                    android:textColor="@color/black_alpha_87"
+                    android:minLines="5"
+                    android:maxLines="5"
+                    android:ellipsize="end" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</com.shihochan.kotlin_news_reader.ui.view.FeedOneColumnView>
