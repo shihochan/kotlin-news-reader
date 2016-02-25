@@ -39,6 +39,6 @@ class FeedOneColumnView
         content.text = Html.fromHtml(item.body)
 
         var zonedDateTime = ZonedDateTime.parse(item.created_at)
-        createdAt.text = zonedDateTime.format(DateTimeFormatter.ofPattern("YYYY/MM/dd hh:mm:ss"))
+        createdAt.text = zonedDateTime.format(DateTimeFormatter.ofPattern("YYYY/MM/dd hh:mm"))
     }
 }
