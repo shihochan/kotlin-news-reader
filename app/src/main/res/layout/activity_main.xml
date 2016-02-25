@@ -41,6 +41,12 @@
                     app:mpb_useIntrinsicPadding="false"
                     style="@style/Widget.MaterialProgressBar.ProgressBar.Horizontal" />
 
+            <View
+                    android:layout_width="match_parent"
+                    android:layout_height="4dp"
+                    android:layout_below="@id/toolbar"
+                    android:background="@drawable/shadow_toolbar"/>
+
         </RelativeLayout>
 
     </android.support.design.widget.CoordinatorLayout>
