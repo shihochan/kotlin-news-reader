@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.shihochan.kotlin_news_reader.R
-import com.shihochan.kotlin_news_reader.model.dto.QiitaDto
+import com.shihochan.kotlin_news_reader.model.dto.qiita.ArticleDto
 import com.shihochan.kotlin_news_reader.ui.view.FeedOneColumnView
 import com.yqritc.recyclerviewmultipleviewtypesadapter.DataBindAdapter
 import com.yqritc.recyclerviewmultipleviewtypesadapter.DataBinder
@@ -16,7 +16,7 @@ import java.util.*
  */
 class FeedOneColumnBinder(dataBindAdapter: DataBindAdapter) : DataBinder<FeedOneColumnBinder.ViewHolder>(dataBindAdapter) {
 
-    private var qiitaContents = ArrayList<QiitaDto>()
+    private var qiitaContents = ArrayList<ArticleDto>()
 
     override fun newViewHolder(parent: ViewGroup): ViewHolder? {
         val view = LayoutInflater.from(parent.context)
@@ -33,7 +33,7 @@ class FeedOneColumnBinder(dataBindAdapter: DataBindAdapter) : DataBinder<FeedOne
         return qiitaContents.size
     }
 
-    fun addAll(contents: List<QiitaDto>) {
+    fun addAll(contents: List<ArticleDto>) {
         qiitaContents.addAll(contents)
         notifyBinderItemInserted(qiitaContents.size - 1)
     }
