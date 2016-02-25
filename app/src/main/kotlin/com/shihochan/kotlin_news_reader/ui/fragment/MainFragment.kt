@@ -16,6 +16,7 @@ import com.shihochan.kotlin_news_reader.ui.adapter.QiitaFeedAdapter
 import com.shihochan.kotlin_news_reader.util.FeedOneColumnItemDecoration
 import com.shihochan.kotlin_news_reader.util.ext.inflate
 import com.trello.rxlifecycle.components.support.RxFragment
+import me.zhanghai.android.materialprogressbar.MaterialProgressBar
 import rx.android.schedulers.AndroidSchedulers
 import timber.log.Timber
 import javax.inject.Inject
@@ -32,6 +33,7 @@ class MainFragment : RxFragment() {
 
     @Inject lateinit var qiitaDao: QiitaDao
 
+    private val progressBar: MaterialProgressBar by bindView(R.id.progressbar)
     private val recyclerView: RecyclerView by bindView(R.id.recycler_view)
 
     companion object {
@@ -56,6 +58,7 @@ class MainFragment : RxFragment() {
             .observeOn(AndroidSchedulers.mainThread())
             .compose(bindToLifecycle<List<ArticleDto>>())
             .subscribe({
+                progressBar.visibility = View.GONE
                 adapterQiita.addAll(it)
             }, {
                 Timber.e(it, it.message)

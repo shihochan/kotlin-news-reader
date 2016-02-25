@@ -2,18 +2,15 @@ package com.shihochan.kotlin_news_reader.ui.activity
 
 import android.content.res.Configuration
 import android.os.Bundle
-import android.os.Handler
 import android.support.v4.widget.DrawerLayout
 import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.Toolbar
 import android.view.MenuItem
-import android.view.View
 import butterknife.bindView
 import com.shihochan.kotlin_news_reader.R
 import com.shihochan.kotlin_news_reader.ui.fragment.MainFragment
 import com.shihochan.kotlin_news_reader.util.ext.setContentFragment
-import me.zhanghai.android.materialprogressbar.MaterialProgressBar
 
 /**
  * Created by Yuki Shiho on 2016/02/21.
@@ -21,7 +18,6 @@ import me.zhanghai.android.materialprogressbar.MaterialProgressBar
 class MainActivity : AppCompatActivity() {
 
     private val toolBar: Toolbar by bindView(R.id.toolbar)
-    private val progressBar: MaterialProgressBar by bindView(R.id.progressbar)
     private val drawerLayout: DrawerLayout by bindView(R.id.drawer_layout)
     private val drawerToggle: ActionBarDrawerToggle by lazy {
         ActionBarDrawerToggle(this, drawerLayout, toolBar,
@@ -38,8 +34,6 @@ class MainActivity : AppCompatActivity() {
         drawerToggle.isDrawerIndicatorEnabled = true
 
         setContentFragment(R.id.container, MainFragment.newInstance())
-
-        Handler().postDelayed({ progressBar.visibility = View.GONE }, 5000)
     }
 
     override fun onPostCreate(savedInstanceState: Bundle?) {
