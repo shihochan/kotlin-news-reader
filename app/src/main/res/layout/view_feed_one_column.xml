@@ -12,16 +12,14 @@
 
     <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="112dp"
-            android:orientation="horizontal">
+            android:layout_height="wrap_content">
 
-        <LinearLayout
-                android:id="@+id/feed_one_column_img_block"
+        <RelativeLayout
+                android:id="@+id/feed_one_column_header"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginLeft="@dimen/margin_m"
-                android:layout_marginTop="@dimen/margin_s">
+                android:orientation="horizontal"
+                android:layout_margin="@dimen/margin_m">
 
             <ImageView
                     android:id="@+id/feed_one_column_usr_img"
@@ -31,26 +29,59 @@
                     android:scaleType="centerCrop" />
 
             <View
+                    android:id="@+id/feed_one_column_clipped"
                     android:layout_width="24dp"
                     android:layout_height="24dp"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="@dimen/margin_m"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
                     android:background="@drawable/selector_btn_clipped" />
 
-        </LinearLayout>
+            <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@id/feed_one_column_clipped"
+                    android:layout_toRightOf="@id/feed_one_column_usr_img">
+
+                <TextView
+                        android:id="@+id/feed_one_column_usr_id"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin_m"
+                        android:textSize="@dimen/txt_s"
+                        android:textColor="@color/black"
+                        android:lineSpacingExtra="1dp"
+                        android:maxLines="1"
+                        android:ellipsize="end" />
+
+                <TextView
+                        android:id="@+id/feed_one_column_created_at"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/feed_one_column_usr_id"
+                        android:layout_marginLeft="@dimen/margin_m"
+                        android:textSize="@dimen/txt_s"
+                        android:textColor="@color/black_alpha_30"
+                        android:lineSpacingExtra="1dp"
+                        android:maxLines="1"
+                        android:ellipsize="end" />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
 
         <RelativeLayout
                 android:layout_width="wrap_content"
-                android:layout_height="112dp"
-                android:layout_toRightOf="@id/feed_one_column_img_block"
-                android:paddingLeft="@dimen/margin_m"
-                android:paddingRight="@dimen/margin_m">
+                android:layout_height="wrap_content"
+                android:layout_below="@id/feed_one_column_header"
+                android:layout_marginLeft="@dimen/margin_m"
+                android:layout_marginRight="@dimen/margin_m"
+                android:layout_marginBottom="@dimen/margin_m">
 
             <TextView
                     android:id="@+id/feed_one_column_title"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/margin_s"
                     android:textSize="@dimen/txt_m"
                     android:textColor="@color/black"
                     android:textStyle="bold"
@@ -66,8 +97,8 @@
                     android:layout_marginTop="@dimen/margin_xs"
                     android:textSize="@dimen/txt_s"
                     android:textColor="@color/black_alpha_87"
-                    android:minLines="5"
-                    android:maxLines="5"
+                    android:minLines="3"
+                    android:maxLines="3"
                     android:ellipsize="end" />
 
         </RelativeLayout>
