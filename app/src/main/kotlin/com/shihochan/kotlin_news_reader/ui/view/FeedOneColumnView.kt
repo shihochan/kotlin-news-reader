@@ -11,6 +11,8 @@ import com.bumptech.glide.Glide
 import com.shihochan.kotlin_news_reader.R
 import com.shihochan.kotlin_news_reader.model.dto.qiita.ArticleDto
 import jp.wasabeef.glide.transformations.CropCircleTransformation
+import org.threeten.bp.ZonedDateTime
+import org.threeten.bp.format.DateTimeFormatter
 
 /**
  * Created by Yuki Shiho on 2016/02/24.
@@ -35,6 +37,8 @@ class FeedOneColumnView
         usrId.text = item.user.id
         title.text = item.title
         content.text = Html.fromHtml(item.body)
-        createdAt.text = item.created_at
+
+        var zonedDateTime = ZonedDateTime.parse(item.created_at)
+        createdAt.text = zonedDateTime.format(DateTimeFormatter.ofPattern("YYYY/MM/dd hh:mm:ss"))
     }
 }
