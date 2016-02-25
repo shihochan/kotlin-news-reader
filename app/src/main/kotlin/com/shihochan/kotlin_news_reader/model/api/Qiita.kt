@@ -1,6 +1,6 @@
 package com.shihochan.kotlin_news_reader.model.api
 
-import com.shihochan.kotlin_news_reader.model.dto.QiitaDto
+import com.shihochan.kotlin_news_reader.model.dto.qiita.ArticleDto
 import retrofit.http.GET
 import retrofit.http.Query
 import rx.Observable
@@ -11,5 +11,5 @@ import rx.Observable
 interface Qiita {
 
     @GET("/items")
-    fun getItems(@Query("per_page") perPage: Int): Observable<List<QiitaDto>>
+    fun getItems(@Query("per_page") perPage: Int): Observable<List<ArticleDto>>
 }

@@ -9,8 +9,10 @@ import android.widget.TextView
 import butterknife.bindView
 import com.bumptech.glide.Glide
 import com.shihochan.kotlin_news_reader.R
-import com.shihochan.kotlin_news_reader.model.dto.QiitaDto
+import com.shihochan.kotlin_news_reader.model.dto.qiita.ArticleDto
 import jp.wasabeef.glide.transformations.CropCircleTransformation
+import org.threeten.bp.ZonedDateTime
+import org.threeten.bp.format.DateTimeFormatter
 
 /**
  * Created by Yuki Shiho on 2016/02/24.
@@ -20,17 +22,23 @@ class FeedOneColumnView
 : CardView(context, attrs, defStyleAttr) {
 
     private val usrImg: ImageView by bindView(R.id.feed_one_column_usr_img)
+    private val usrId: TextView by bindView(R.id.feed_one_column_usr_id)
     private val title: TextView by bindView(R.id.feed_one_column_title)
     private val content: TextView by bindView(R.id.feed_one_column_content)
+    private val createdAt: TextView by bindView(R.id.feed_one_column_created_at)
 
-    fun bindTo(item: QiitaDto) {
+    fun bindTo(item: ArticleDto) {
 
         Glide.with(context)
-                .load("https://avatars1.githubusercontent.com/u/4586632?v=3&s=100")
+                .load(item.user.profile_image_url)
                 .bitmapTransform(CropCircleTransformation(context))
                 .into(usrImg)
 
+        usrId.text = item.user.id
         title.text = item.title
         content.text = Html.fromHtml(item.body)
+
+        var zonedDateTime = ZonedDateTime.parse(item.created_at)
+        createdAt.text = zonedDateTime.format(DateTimeFormatter.ofPattern("YYYY/MM/dd hh:mm"))
     }
 }

@@ -1,6 +1,6 @@
 package com.shihochan.kotlin_news_reader.ui.adapter
 
-import com.shihochan.kotlin_news_reader.model.dto.QiitaDto
+import com.shihochan.kotlin_news_reader.model.dto.qiita.ArticleDto
 import com.shihochan.kotlin_news_reader.ui.adapter.binder.FeedOneColumnBinder
 import com.yqritc.recyclerviewmultipleviewtypesadapter.ListBindAdapter
 
@@ -16,7 +16,7 @@ class QiitaFeedAdapter : ListBindAdapter() {
         addAllBinder(FeedOneColumnBinder(this))
     }
 
-    fun addAll(contents: List<QiitaDto>) {
+    fun addAll(contents: List<ArticleDto>) {
         binder.addAll(contents)
     }
 

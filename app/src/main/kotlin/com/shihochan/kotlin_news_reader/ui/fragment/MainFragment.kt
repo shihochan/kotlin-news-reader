@@ -11,7 +11,7 @@ import com.shihochan.kotlin_news_reader.AppComponent
 import com.shihochan.kotlin_news_reader.MainApp
 import com.shihochan.kotlin_news_reader.R
 import com.shihochan.kotlin_news_reader.model.dao.QiitaDao
-import com.shihochan.kotlin_news_reader.model.dto.QiitaDto
+import com.shihochan.kotlin_news_reader.model.dto.qiita.ArticleDto
 import com.shihochan.kotlin_news_reader.ui.adapter.QiitaFeedAdapter
 import com.shihochan.kotlin_news_reader.util.FeedOneColumnItemDecoration
 import com.shihochan.kotlin_news_reader.util.ext.inflate
@@ -54,7 +54,7 @@ class MainFragment : RxFragment() {
 
         qiitaDao.getHotEntry(20)
             .observeOn(AndroidSchedulers.mainThread())
-            .compose(bindToLifecycle<List<QiitaDto>>())
+            .compose(bindToLifecycle<List<ArticleDto>>())
             .subscribe({
                 adapterQiita.addAll(it)
             }, {
