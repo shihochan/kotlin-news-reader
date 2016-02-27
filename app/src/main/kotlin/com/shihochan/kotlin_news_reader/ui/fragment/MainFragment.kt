@@ -55,14 +55,14 @@ class MainFragment : RxFragment() {
         recyclerView.addItemDecoration(FeedOneColumnItemDecoration(activity))
 
         qiitaDao.getHotEntry(20)
-            .observeOn(AndroidSchedulers.mainThread())
-            .compose(bindToLifecycle<List<ArticleDto>>())
-            .subscribe({
-                progressBar.visibility = View.GONE
-                adapterQiita.addAll(it)
-            }, {
-                Timber.e(it, it.message)
-            })
+                .compose(bindToLifecycle<List<ArticleDto>>())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe({
+                    progressBar.visibility = View.GONE
+                    adapterQiita.addAll(it)
+                }, {
+                    Timber.e(it, it.message)
+                })
     }
 
     override fun onDestroyView() {
