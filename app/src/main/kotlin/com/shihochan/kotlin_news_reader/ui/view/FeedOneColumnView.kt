@@ -10,9 +10,12 @@ import butterknife.bindView
 import com.bumptech.glide.Glide
 import com.shihochan.kotlin_news_reader.R
 import com.shihochan.kotlin_news_reader.model.dto.qiita.ArticleDto
+import com.shihochan.kotlin_news_reader.util.RxBusProvider
+import com.shihochan.kotlin_news_reader.util.event.OpenChromeTabsEvent
 import jp.wasabeef.glide.transformations.CropCircleTransformation
 import org.threeten.bp.ZonedDateTime
 import org.threeten.bp.format.DateTimeFormatter
+import kotlin.properties.Delegates
 
 /**
  * Created by Yuki Shiho on 2016/02/24.
@@ -21,6 +24,8 @@ class FeedOneColumnView
 @JvmOverloads constructor(context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0)
 : CardView(context, attrs, defStyleAttr) {
 
+    private var url: String by Delegates.notNull()
+
     private val usrImg: ImageView by bindView(R.id.feed_one_column_usr_img)
     private val usrId: TextView by bindView(R.id.feed_one_column_usr_id)
     private val title: TextView by bindView(R.id.feed_one_column_title)
@@ -28,6 +33,8 @@ class FeedOneColumnView
     private val createdAt: TextView by bindView(R.id.feed_one_column_created_at)
 
     fun bindTo(item: ArticleDto) {
+
+        url = item.url
 
         Glide.with(context)
                 .load(item.user.profile_image_url)
@@ -40,5 +47,9 @@ class FeedOneColumnView
 
         var zonedDateTime = ZonedDateTime.parse(item.created_at)
         createdAt.text = zonedDateTime.format(DateTimeFormatter.ofPattern("YYYY/MM/dd hh:mm"))
+
+        setOnClickListener({
+            RxBusProvider.bus.send(OpenChromeTabsEvent(url))
+        })
     }
 }
